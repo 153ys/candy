@@ -5,17 +5,13 @@
 let list = [false, 1, 0, -1, 2, 0, 1, 3, "a"];
 
 function moveZerosToEnd(arr) {
-  const nonZero = [];
-  const zero = [];
+  const nonZero = arr.filter(function (item) {
+    return item !== 0;
+  });
+  const zero = arr.filter(function (item) {
+    return item == 0;
+  });
 
-  for (let i = 0; i < arr.length; i++) {
-    const item = arr[i];
-    if (item == 0) {
-      zero.push(item);
-    } else {
-      nonZero.push(item);
-    }
-  }
   return [...nonZero, ...zero];
 }
 
