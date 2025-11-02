@@ -6,6 +6,7 @@
 //   [23, 71, 33, 82, 1] 印出 24
 
 function sumOfSmallestValues(arr) {
+  //陣列由小到大重新排列
   arr.sort((a, b) => a - b);
   return arr[0] + arr[1];
 }

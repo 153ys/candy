@@ -6,13 +6,12 @@ const chars1 = ["a", "b", "c", "d", "f", "g"];
 const chars2 = ["O", "Q", "R", "S"];
 
 function missingChar(chars) {
-  // A-Z的編碼是連續的數字
-  // 利用數字差來抓缺少的字母
-
+  // 用charCodeAt來取得陣列內字母的數字編碼
   for (let i = 0; i <= chars.length - 1; i++) {
     const currentCode = chars[i].charCodeAt(0);
     const nextCode = chars[i + 1].charCodeAt(0);
 
+    // 利用數字差來抓缺少的字母
     if (nextCode - currentCode > 1) {
       // 用fromCharCode把編碼轉回字母
       return String.fromCharCode(currentCode + 1);
